@@ -8,5 +8,10 @@ namespace WEBAPP_TARDE.Controllers
         {
             return View();
         }
+
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
     }
 }
