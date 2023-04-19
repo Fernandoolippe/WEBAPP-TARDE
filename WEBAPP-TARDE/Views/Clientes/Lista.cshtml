@@ -1,4 +1,6 @@
-﻿<div class="card">
+﻿@model List<WEBAPP_TARDE.Models.ClientesViewModel>
+
+<div class="card">
 
 <div class="card-header">
     <h2 style="color:black">Lista de cliente</h2>
@@ -13,9 +15,9 @@
         <div class="col-3">
             <select name="Filtro" class="form-control">
             <option value="0">Todos os campos</option>
-            <option value="id">Por id</option>
-            <option value="nome">Por nome</option>
-            <option value="telefone">Por telefone</option>
+            <option value="Id">Por id</option>
+            <option value="Nome">Por nome</option>
+            <option value="Telefone">Por telefone</option>
 
             </select>
         </div>
@@ -47,56 +49,26 @@
 
 
             <tbody>
-                <tr>
 
-                    <td>1</td>
-                    <td>Ale</td>
-                    <td>12314</td>
+                @foreach(var cliente in Model)
+                {
+                    <tr>
                     <td>
-                        <a href="/Clientes/Editar/1" class="btn btn-warning"> Editar</a>
-                        <a href="/Clientes/Excluir/1" class="btn btn-danger"> Excluir</a>
-                        <a href="/Clientes/Compras/1" class="btn btn-info"> Lista de compras</a>
-                    </td>
-                </tr>
+                    @cliente.Id </td>
+                    <td> @cliente.Nome </td>
+                    <td> @cliente.Telefone </td>
 
-                <tr>
 
-                    <td>2</td>
-                    <td>Le</td>
-                    <td>543546</td>
-                    <td>
-                        <a href="/Clientes/Editar/2" class="btn btn-warning"> Editar</a>
-                        <a href="/Clientes/Excluir/2" class="btn btn-danger"> Excluir</a>
-                        <a href="/Clientes/Compras/2" class="btn btn-info"> Lista de compras</a>
-                    </td>
+                            <td>
+                            <a href="/Clientes/Editar/@cliente.Id" class="btn btn-warning"> Editar</a>
+                            <a href="/Clientes/Excluir/@cliente.Id" class="btn btn-danger"> Excluir</a>
+                            <a href="/Clientes/Compras/@cliente.Id" class="btn btn-info"> Lista de compras</a>
+                              </td>                   
+                              </tr>
 
-                </tr>
+                }
 
-                <tr>
-
-                    <td>3</td>
-                    <td>xe</td>
-                    <td>7676</td>
-                    <td>
-                        <a href="/Clientes/Editar/3" class="btn btn-warning"> Editar</a>
-                        <a href="/Clientes/Excluir/3" class="btn btn-danger"> Excluir</a>
-                        <a href="/Clientes/Compras/3" class="btn btn-info"> Lista de compras</a>
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td>4</td>
-                    <td>and</td>
-                    <td>90767</td>
-                    <td>
-                        <a href="/Clientes/Editar/4" class="btn btn-warning"> Editar</a>
-                        <a href="/Clientes/Excluir/4" class="btn btn-danger"> Excluir</a>
-                        <a href="/Clientes/Compras/4" class="btn btn-info"> Lista de compras</a>
-                    </td>
-
-                </tr>
+                
 
             </tbody>
 

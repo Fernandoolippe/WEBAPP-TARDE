@@ -1,0 +1,63 @@
+﻿@model WEBAPP_TARDE.Models.ClientesViewModel
+
+<body style="background-color:white">
+
+    <div class="row">
+
+        <div class="col-4">
+        </div>
+
+
+        <div class="col-4">
+            <div class="card">
+                <div class="card-header">
+                    <center style="color:black"><h1>Edição de Cliente</h1></center>
+                </div>
+
+                <div class="card-body">
+
+                    <form action="/Clientes/SalvarDados" method="post">
+                        <label> Codigo</label>
+                        <input name="id" type="text" readonly value="@Model.Id" class="form-control" />
+                        <label style="color:black">Nome</label>
+                        <input type="text" name="Nome" class="form-control" value="@Model.Nome" />
+                        <br />
+
+                        <label style="color:black">Telefone</label>
+                        <input type="text" name="Telefone" class="form-control" value="@Model.Telefone" />
+                        <br />
+
+                        <center>
+                            <button type="submit" class="btn btn-success">
+                                Salvar Cliente
+                            </button>
+                        </center>
+
+
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-4">
+        </div>
+
+
+
+
+
+    </div>
+
+</body>
+
+
+
+
+
+
+
+
+
