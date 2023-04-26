@@ -1,0 +1,93 @@
+﻿@model List<WEBAPP_TARDE.Entidades.ProdutoEntidade>
+
+<div class="card">
+
+    <div class="card-header">
+        <h2 style="color:black">Lista de cliente</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Clientes/Cadastro" class="btn btn-success"> Novo Produto </a>
+            </div>
+
+            <div class="col-3">
+                <select name="Filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="Id">Por id</option>
+                    <option value="Nome">Por Descrição</option>
+                    <option value="Telefone">Por Valor</option>
+
+                </select>
+            </div>
+
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+
+
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </div>
+
+        <table class="table" style="color:black">
+
+
+            <thead>
+                <tr>
+                    <td>Codigo</td>
+                    <td>Descrição</td>
+                    <td>Valor</td>
+                    <td>
+                    </td>
+                </tr>
+
+
+            </thead>
+
+
+            <tbody>
+
+
+                @foreach (var produto in Model)
+                {
+
+                <tr>
+
+                        <td>
+                        @produto.Id
+                        </td>
+                        <td>
+                             @produto.Descricao
+                        </td>
+                        <td> R$ @produto.Valor </td>
+
+
+                        <td>
+                            <a href="/Clientes/Editar/@produto.Id" class="btn btn-warning"> Editar</a>
+                            <a href="/Clientes/Excluir/@produto.Id" class="btn btn-danger"> Excluir</a>
+                            <a href="/Clientes/Compras/@produto.Id" class="btn btn-info"> Lista de compras</a>
+                        </td>
+                    </tr>
+
+                }
+
+
+
+            </tbody>
+
+
+
+
+
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
