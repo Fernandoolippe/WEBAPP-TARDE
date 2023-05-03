@@ -1,0 +1,90 @@
+﻿@model List<WEBAPP_TARDE.Entidades.PermissaoEntidade>
+
+<div class="card">
+
+    <div class="card-header">
+        <h2 style="color:black">Lista de Permissão</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Permissao/Cadastro" class="btn btn-success"> Nova Permissão </a>
+            </div>
+
+            <div class="col-3">
+                <select name="Filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="Id">Por id</option>
+                    <option value="Nome">Por Descrição</option>
+
+                </select>
+            </div>
+
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+
+
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </div>
+
+        <table class="table" style="color:black">
+
+
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Descrição</td>
+                    <td>
+                    </td>
+                </tr>
+
+
+            </thead>
+
+
+            <tbody>
+                @foreach (var permissao in Model)
+                {
+
+                    <tr>
+
+                        <td>
+                            @permissao.Id
+                        </td>
+                        <td>
+                            @permissao.Descricao
+                        </td>
+                       
+
+
+                        <td>
+                            <a href="/Permissao/Editar/@permissao.Id" class="btn btn-warning"> Editar</a>
+                            <a href="/Permissao/Excluir/@permissao.Id" class="btn btn-danger"> Excluir</a>
+                        </td>
+                    </tr>
+
+                }
+
+
+
+
+
+            </tbody>
+
+
+
+
+
+
+        </table>
+
+    </div>
+</div>
+
+
+
+

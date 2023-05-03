@@ -1,0 +1,66 @@
+﻿@model WEBAPP_TARDE.Entidades.CategoriasEntidade
+
+
+<body style="background-color:white">
+
+<div class="row">
+
+<div class="col-4">
+
+</div>
+
+    
+    <div class="col-4">
+    <div class="card">
+        <div class="card-header">
+        <center style="color:black"><h1>Cadastro de Categoria</h1></center>
+    </div>
+
+    <div class="card-body">
+    
+        <form action="/Categorias/SalvarDados" method="post">
+        <label style="color:black">Nome</label>
+        <input type="text" name="Nome" class="form-control"/>
+        <br />
+        <label style="color:black">Ativo</label>
+                        <label>Ativo</label>
+                        <select name="Ativo" class="form-control">
+                            <option value="true">Ativo</option>
+                            <option value="false">Desativado</option>
+                        </select>
+                        <br />
+
+        <center><button type="submit" class="btn btn-success">
+            Salvar Categoria
+        </button> </center>
+     
+
+
+        
+        </form>
+        </div>
+        </div>
+        </div>
+
+
+        <div class="col-4">
+
+        </div>
+
+   
+
+   
+
+</div>
+
+</body>
+
+
+
+
+
+
+
+    
+
+

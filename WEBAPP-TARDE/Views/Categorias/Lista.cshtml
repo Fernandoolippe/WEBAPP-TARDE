@@ -1,0 +1,100 @@
+﻿@model List<WEBAPP_TARDE.Entidades.CategoriasEntidade>
+
+<div class="card">
+
+    <div class="card-header">
+        <h2 style="color:black">Lista de Categorias</h2>
+    </div>
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">
+                <a href="/Categorias/Cadastro" class="btn btn-success"> Nova Categorias </a>
+            </div>
+
+            <div class="col-3">
+                <select name="Filtro" class="form-control">
+                    <option value="0">Todos os campos</option>
+                    <option value="Id">Por id</option>
+                    <option value="Nome">Por Nome</option>
+                    <option value="Telefone">Por Ativo</option>
+
+                </select>
+            </div>
+
+            <div class="col-5">
+                <input type="text" name="busca" class="form-control" />
+            </div>
+
+
+            <div class="col-2">
+                <button class="btn btn-primary" type="submit">Pesquisar</button>
+            </div>
+        </div>
+
+        <table class="table" style="color:black">
+
+
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Nome</td>
+                    <td>Ativo</td>
+                    <td>
+                    </td>
+                </tr>
+
+
+            </thead>
+
+         
+            <tbody>
+                @foreach (var categorias in Model)
+                {
+
+                    <tr>
+
+                        <td>
+                            @categorias.Id
+                        </td>
+                        <td>
+                            @categorias.Nome
+                        </td>
+                        <td>
+                            @if (categorias.Ativo)
+                            {
+                                <input type="checkbox" readonly checked />
+                            }
+                            else
+                            {
+                                <input type="checkbox" readonly />
+                            }
+
+
+                        <td>
+                            <a href="/Categorias/Editar/@categorias.Id" class="btn btn-warning"> Editar</a>
+                            <a href="/Categorias/Excluir/@categorias.Id" class="btn btn-danger"> Excluir</a>
+                        </td>
+                    </tr>
+
+                }
+
+                
+
+
+
+            </tbody>
+
+
+
+
+
+
+        </table>
+
+    </div>
+</div>
+
+
+
+
